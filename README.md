@@ -27,12 +27,12 @@ sh\> git clone https://github.com/jebyrne/seedoflife
 
 These correspondences can also be generated manually:
 
-\>\> cd ${PhotorealisticVirtualWord}
-\>\> pvc_correspondence(${indir}, ${outdir}
+\>\> cd ${PhotorealisticVirtualWord}_
+\>\> pvc_correspondence(${indir}, ${outdir}_
 
-4. Run demo
-\>\> cd ${PhotorealisticVirtualWord}
-\>\> demo_pvc(${indir}, ${outdir}
+4. Run demo_
+\>\> cd ${PhotorealisticVirtualWord}_
+\>\> demo_pvc(${indir}, ${outdir}_
 
 5. To run a descriptor comparison and plot performance results 
 
