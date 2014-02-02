@@ -19,25 +19,25 @@ This toolbox relies on the nested shape descriptor toolbox for displaying corres
 2. Download and install nested shape descriptor toolbox
 
 sh\> git clone https://github.com/jebyrne/seedoflife  
-\>\> cd seedoflife  
-\>\> set_paths  
+\>\> cd seedoflife    
+\>\> set_paths    
 
 
 3. Download [precomputed PVC correspondences](http://dropbox.com) and unpack to ${outdir}
 
 These correspondences can also be generated manually:
 
-\>\> cd ${PhotorealisticVirtualWord}_
-\>\> pvc_correspondence(${indir}, ${outdir}_
+\>\> cd ${PhotorealisticVirtualWord}    
+\>\> pvc_correspondence(${indir}, ${outdir}    
 
-4. Run demo_
-\>\> cd ${PhotorealisticVirtualWord}_
-\>\> demo_pvc(${indir}, ${outdir}_
+4. Run demo    
+\>\> cd ${PhotorealisticVirtualWord}    
+\>\> demo_pvc(${indir}, ${outdir}    
 
 5. To run a descriptor comparison and plot performance results 
 
-\>\> cd ${PhotorealisticVirtualWord}
-\>\> eval_pvc(${indir}, ${outdir}
+\>\> cd ${PhotorealisticVirtualWord}    
+\>\> eval_pvc(${indir}, ${outdir}    
 
 
 References
