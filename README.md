@@ -14,7 +14,7 @@ Correspondences between image pairs are stored in matlab MAT files, following th
     asgn_{CameraIndex}_{LocationIndex}_{orientation2orientation}.mat
     asgn_{CameraIndex}_{Location2Location}_{orientation2orientation}.mat
 
-Pixel correspondences between a reference image (im_ref) and an observed image (im_obs) are represented as frames such that the kth pixel (ij) stored in matrix fr_obs(1:2,k) in image im_obs corresponds to kth pixel (ij) stored in mat.fr_obs2ref(1:2,k) in image im_ref. 
+Pixel correspondences between a reference image (im_ref) and an observed image (im_obs) are represented as frames such that the kth pixel (ij) stored in matrix fr_obs(1:2,k) in image im_obs corresponds to kth pixel (ij) stored in fr_obs2ref(1:2,k) in image im_ref. 
 
 Installation
 ------------
@@ -39,7 +39,7 @@ This toolbox relies on the nested shape descriptor toolbox for displaying corres
         >> cd ${PhotorealisticVirtualWord}    
         >> demo_pvc(${indir}, ${outdir})
 
-5. To run a descriptor comparison and plot performance results 
+5. To run a descriptor comparison and plot performance results, install [mexopencv](http://www.cs.stonybrook.edu/~kyamagu/mexopencv) and run
 
         >> cd ${PhotorealisticVirtualWord}    
         >> eval_pvc(${indir}, ${outdir})    

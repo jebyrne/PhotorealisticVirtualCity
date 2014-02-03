@@ -13,11 +13,12 @@ camera = 1:4;
 location = {1:60, 1:61, 1:38, 1:41};
 orientation = 1:3;
 timeofday = 9:2:17;
-%indir = '/Volumes/JEBYRNE-BACKUP/datasets/iccv2011_data';
-%outdir = '/Volumes/JEBYRNE-BACKUP/datasets/pvw';
 m = 480;  % image size
 n = 640;
 verbose = true;
+
+%indir = '/Volumes/JEBYRNE-BACKUP/datasets/iccv2011_data';
+%outdir = '/Volumes/JEBYRNE-BACKUP/datasets/pvw';
 
 
 %% Preprocessing

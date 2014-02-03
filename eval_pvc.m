@@ -1,4 +1,4 @@
-function [] = eval_pvw()
+function [] = eval_pvc(indir, outdir)
 %------------------------------------------------------------------------
 %
 % Photorealistic virtual world (PVW) correspondences
@@ -8,13 +8,13 @@ camera = 1:4;
 location = {1:60, 1:61, 1:38, 1:41};
 orientation = [3 1];
 timeofday = 9:2:17;
-indir = '/Volumes/JEBYRNE-BACKUP/datasets/iccv2011_data';
-outdir = '/Volumes/JEBYRNE-BACKUP/datasets/pvw';
 verbose = false;
 desc = {'nsd', 'daisy', 'sift', 'orb', 'brisk', 'freak'};
 
-addpath('/Users/jebyrne/software/mexopencv');
-addpath(genpath('/Users/jebyrne/dev/pvw/deps'));
+%indir = '/Volumes/JEBYRNE-BACKUP/datasets/iccv2011_data';
+%outdir = '/Volumes/JEBYRNE-BACKUP/datasets/pvw';
+%addpath('/Users/jebyrne/software/mexopencv');
+%addpath(genpath('/Users/jebyrne/dev/pvw/deps'));
 
 
 %% Translation evaluation
