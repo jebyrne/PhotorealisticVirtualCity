@@ -13,8 +13,8 @@ desc = {'nsd', 'daisy', 'sift', 'orb', 'brisk', 'freak'};
 
 %indir = '/Volumes/JEBYRNE-BACKUP/datasets/iccv2011_data';
 %outdir = '/Volumes/JEBYRNE-BACKUP/datasets/pvw';
-%addpath('/Users/jebyrne/software/mexopencv');
-%addpath(genpath('/Users/jebyrne/dev/pvw/deps'));
+addpath('/Users/jebyrne/software/mexopencv');
+addpath(genpath('/Users/jebyrne/dev/pvw/deps'));
 
 
 %% Translation evaluation
@@ -139,14 +139,13 @@ save(fullfile(outdir, sprintf('eval_dense_translation.mat')), 'Z');
 
 
 %% Plots
-outdir = '/Volumes/JEBYRNE-BACKUP/datasets/pvw';
 
 % Translation - mean per camera
 mat = load(fullfile(outdir, sprintf('eval_translation.mat')));
 for i=camera
   figure(10+i); hold on;  
   z = squeeze(mean(mat.Z(i,location{i}(2:end),:,:),3));  % remove zeros
-  plot(z,'.-'); grid on; legend(upper(desc), 'Location','SouthEast');
+  plot(z,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc), 'Location','SouthEast');
   xlabel(sprintf('Position (Camera %d)', i));
   ylabel('Translation Matching Score');  
   ylim([0, 1]);
@@ -179,7 +178,7 @@ export_fig(fullfile(outdir, 'pvw_eval_swm.png'), '-transparent');
 
 % Mean matching score vs. time 
 t = squeeze(mean(reshape(T, [size(T,1)*size(T,2) size(T,3) size(T,4)]),1));
-figure(2); plot(t,'.-'); grid on; legend(upper(desc), 'Location','SouthEast');
+figure(2); plot(t,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc), 'Location','SouthEast');
 set(gca,'xticklabel', {'9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'});
 ylabel('Translation Matching Score');
 xlabel('Time of Day');
@@ -192,7 +191,7 @@ mat = load(fullfile(outdir, sprintf('eval_orientation.mat')));
 for i=camera
   figure(20+i); hold on;  
   z = squeeze(mean(mean(mat.Z(i,location{i}(2:end),:,:,:),3),4));  % remove zeros
-  plot(z,'.-'); grid on; legend(upper(desc), 'Location','SouthEast');
+  plot(z,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc), 'Location','SouthEast');
   xlabel(sprintf('Position (Camera %d)', i));
   ylabel('Rotation Matching Score');  
   ylim([0, 1]);
@@ -216,7 +215,7 @@ export_fig(fullfile(outdir, 'pvw_eval_rotation_2.png'), '-transparent');
 % Mean matching score vs. time 
 r = permute(R, [1 2 4 3 5]);
 r = squeeze(mean(reshape(r, [size(r,1)*size(r,2)*size(r,3) size(r,4) size(r,5)]),1));
-figure(4); plot(r,'.-'); grid on; legend(upper(desc),'Location','SouthEast');
+figure(4); plot(r,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc),'Location','SouthEast');
 set(gca,'xticklabel', {'9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'});
 ylabel('Rotation Matching Score');
 xlabel('Time of Day');
@@ -229,7 +228,7 @@ mat = load(fullfile(outdir, sprintf('eval_translation_and_orientation.mat')));
 for i=camera
   figure(30+i); hold on;  
   z = squeeze(mean(mat.Z(i,location{i}(2:end),:,:),3));  % remove zeros
-  plot(z,'.-'); grid on; legend(upper(desc), 'Location','SouthEast');
+  plot(z,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc), 'Location','SouthEast');
   xlabel(sprintf('Position (Camera %d)', i));
   ylabel('Translation+Rotation Matching Score');  
   ylim([0, 1]);
@@ -253,7 +252,7 @@ export_fig(fullfile(outdir, 'pvw_eval_translation_rotation_2.png'), '-transparen
 
 % Mean matching score vs. time 
 t = squeeze(mean(reshape(T, [size(T,1)*size(T,2) size(T,3) size(T,4)]),1));
-figure(6); plot(t,'.-'); grid on; legend(upper(desc), 'Location','SouthEast');
+figure(6); plot(t,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc), 'Location','SouthEast');
 set(gca,'xticklabel', {'9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'});
 ylabel('Translation+Rotation Matching Score');
 xlabel('Time of Day');
@@ -263,12 +262,13 @@ export_fig(fullfile(outdir, 'pvw_eval_translation_rotation_3.png'), '-transparen
 
 
 % Dense Translation - mean per stride
+R = [];
 mat = load(fullfile(outdir, sprintf('eval_dense_translation.mat')));
 for k=1:length(location)
   R(:,k,:,:,:) = mean(mat.Z(:,location{k},:,:,:),2);  % remove zeros
 end
 r = squeeze(mean(reshape(R, [size(R,1)*size(R,2)*size(R,3), size(R,4), size(R,5)]), 1));
-figure(7); plot(r,'.-'); grid on; legend(upper(desc), 'Location','NorthEast');
+figure(7); plot(r,'.-','LineWidth',2,'MarkerSize',15); grid on; legend(upper(desc), 'Location','NorthEast');
 xlabel(sprintf('Stride (log_2)'));
 ylabel('Mean Matching Score');
 ylim([0, 1]);
