@@ -22,17 +22,15 @@ This toolbox relies on the nested shape descriptor toolbox for displaying corres
         >> cd seedoflife    
         >> set_paths    
 
-3. Download [precomputed PVC correspondences](https://www.dropbox.com/s/va8x0qdgfpta2xb/PhotorealisticVirtualCity.zip) and unpack to ${outdir}
-
-Alternatively, these correspondences can also be generated manually without downloading the ZIP file.
-
-    >> cd ${PhotorealisticVirtualWord}    
-    >> pvc_correspondence(${indir}, ${outdir})    
-
-4. Run demo to show corresponding pixels.
+3. Download [precomputed PVC correspondences](https://www.dropbox.com/s/va8x0qdgfpta2xb/PhotorealisticVirtualCity.zip) and unpack to ${outdir}.  Alternatively, these correspondences can also be generated manually without downloading the ZIP file.
 
         >> cd ${PhotorealisticVirtualWord}    
-        >> demo_pvc(${indir}, ${outdir})    
+        >> pvc_correspondence(${indir}, ${outdir})
+
+4.  Run demo to show corresponding pixels.
+
+        >> cd ${PhotorealisticVirtualWord}    
+        >> demo_pvc(${indir}, ${outdir})
 
 5. To run a descriptor comparison and plot performance results 
 
