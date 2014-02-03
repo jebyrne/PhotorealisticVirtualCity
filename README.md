@@ -23,21 +23,21 @@ sh\> git clone https://github.com/jebyrne/seedoflife
 \>\> set_paths    
 
 
-3. Download [precomputed PVC correspondences](http://dropbox.com) and unpack to ${outdir}
+3. Download [precomputed PVC correspondences](https://www.dropbox.com/s/va8x0qdgfpta2xb/PhotorealisticVirtualCity.zip) and unpack to ${outdir}
 
 These correspondences can also be generated manually:
 
 \>\> cd ${PhotorealisticVirtualWord}    
-\>\> pvc_correspondence(${indir}, ${outdir}    
+\>\> pvc_correspondence(${indir}, ${outdir})    
 
 4. Run demo    
 \>\> cd ${PhotorealisticVirtualWord}    
-\>\> demo_pvc(${indir}, ${outdir}    
+\>\> demo_pvc(${indir}, ${outdir})    
 
 5. To run a descriptor comparison and plot performance results 
 
 \>\> cd ${PhotorealisticVirtualWord}    
-\>\> eval_pvc(${indir}, ${outdir}    
+\>\> eval_pvc(${indir}, ${outdir})    
 
 
 References
