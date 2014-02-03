@@ -8,6 +8,14 @@ http://people.csail.mit.edu/biliana/projects/iccv2011/
 We provide additional tools that define image to image correspondences for all pairs
 of overlapping images.
 
+Correspondences are stored in matlab MAT files, following the PVC filename convention
+
+    asgn_{CameraIndex}_{Location2Location}_{orientation}.mat
+    asgn_{CameraIndex}_{LocationIndex}_{orientation2orientation}.mat
+    asgn_{CameraIndex}_{Location2Location}_{orientation2orientation}.mat
+
+Correspondences are represented as frames such that pixel ij stored in fr_obs(1:2,k) in image im_obs corresponds to pixel
+ij stored in mat.fr_obs2ref(1:2,k) in image im_ref. 
 
 Installation
 ------------
